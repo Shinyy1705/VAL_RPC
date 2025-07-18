@@ -6,6 +6,10 @@ load_dotenv()
 
 API_KEY = os.getenv("API_KEY")
 
+#PEAK RANK Ohne RR
+#IN LOBBY / IN QUEUE
+#
+
 def get_account_info(name, tag):
     url = f"https://api.henrikdev.xyz/valorant/v1/account/{name}/{tag}"
     headers = {
@@ -21,3 +25,9 @@ def get_account_rank(name, tag):
     }
     response = requests.get(url, headers=headers)
     return response.json()
+
+def main():
+    rank = get_account_rank('snedx', 'valo')
+    rank = rank.get("data")
+    rank = rank[0].get("currenttierpatched")
+    return rank
