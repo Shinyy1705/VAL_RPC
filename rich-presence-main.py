@@ -14,7 +14,8 @@ RPC.connect()
 def is_valorant_running():
     for proc in psutil.process_iter(['name']):
         try:
-            if proc.info['name'] and "discord" in proc.info['name'].lower():
+            #edit valorant to discord for testing purposes
+            if proc.info['name'] and "valorant" in proc.info['name'].lower():
                 return True
         except (psutil.NoSuchProcess, psutil.AccessDenied, psutil.ZombieProcess):
             continue
@@ -41,7 +42,7 @@ def get_presence_data():
 
         # Return the full presence data with a button
         return {
-            'state': "In-Game",
+            'state': "Coaching Valorant",
             'details': f"Peak Rank: {rank}",
             'large_image': "valorant-logo",  # Make sure this image is uploaded in Dev Portal
             'large_text': "VALORANT",
