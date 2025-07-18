@@ -2,7 +2,7 @@ import time
 
 import requests  # Needs requests module installed: pip install requests -U
 from pypresence import Presence
-
+import api.api as api
 
 CLIENT_ID = '1395545885349515274'  # Your client ID here
 
@@ -13,10 +13,8 @@ https://discord.com/developers/applications/<APP ID>/rich-presence/assets
 
 def get_presence_data():
     try:
-        with requests.get('VALOAPI', timeout=5) as resp:
-            data = resp.json()
-        # Use the data in whatever way you want, and return kwargs for the Presence.update() method
-        return {'state': data['online'].title(), 'details': 'SomeWebsite Status', 'start': data['start']}
+        rank = api.main()
+        return {'state': rank}
     except Exception:
         # update failed data
         return {'state': 'SomeWebsite status is down!'}
