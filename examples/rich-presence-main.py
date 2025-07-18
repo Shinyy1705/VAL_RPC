@@ -4,12 +4,16 @@ import requests  # Needs requests module installed: pip install requests -U
 from pypresence import Presence
 
 
-CLIENT_ID = ''  # Your client ID here
+CLIENT_ID = '1395545885349515274'  # Your client ID here
 
+"""
+You need to upload your image(s) here:
+https://discord.com/developers/applications/<APP ID>/rich-presence/assets
+"""
 
 def get_presence_data():
     try:
-        with requests.get('https://somewebsite.com/api/status', timeout=5) as resp:
+        with requests.get('VALOAPI', timeout=5) as resp:
             data = resp.json()
         # Use the data in whatever way you want, and return kwargs for the Presence.update() method
         return {'state': data['online'].title(), 'details': 'SomeWebsite Status', 'start': data['start']}
