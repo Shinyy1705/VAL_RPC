@@ -5,7 +5,8 @@ import os
 load_dotenv()
 
 API_KEY = os.getenv("API_KEY")
-
+username = os.getenv("VALUSER")
+tag = os.getenv("TAG")
 #PEAK RANK Ohne RR
 #IN LOBBY / IN QUEUE
 #
@@ -26,7 +27,7 @@ def get_account_rank(name, tag):
     response = requests.get(url, headers=headers)
     return response.json()
 
-get_account_rank('snedx', 'valo')
+get_account_rank(username, tag)
 
 def get_account_peak_rank(puuid):
     url = f"https://api.henrikdev.xyz/valorant/v3/by-puuid/mmr/EU/PC/{puuid}"
@@ -36,8 +37,8 @@ def get_account_peak_rank(puuid):
     response = requests.get(url, headers=headers)
     return response.json()
 
-def get_puudi(name, tag):
-    url = f"https://api.henrikdev.xyz/valorant/v1/account/{name}/{tag}"
+def get_puudi(username, tag):
+    url = f"https://api.henrikdev.xyz/valorant/v1/account/{username}/{tag}"
     headers = {
         'Authorization': API_KEY
     }
@@ -48,7 +49,7 @@ def get_puudi(name, tag):
 
 def main():
 
-    puuid = get_puudi("snedx", "valo")
+    puuid = get_puudi(username, tag)
     rank = get_account_peak_rank(puuid)
     rank = rank.get("data")
     rank = rank.get("peak")
@@ -57,7 +58,7 @@ def main():
     return rank
 
 def image():
-    rank = get_account_rank('snedx', 'valo')
+    rank = get_account_rank(username, tag)
     rank = rank.get("data")
     rank = rank[0]
     rank = rank.get("images")
@@ -65,4 +66,4 @@ def image():
     return image
 
 
-
+main()

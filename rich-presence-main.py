@@ -10,8 +10,12 @@ RPC.connect()
 def get_presence_data():
     try:
         rank = api.main()  # z.B. "Gold 3"
-        rank_name, rank_val = rank.split(' ')
-        image = rank_name.lower() + "-" + rank_val.lower()
+        if rank == "Radiant":
+            image = "radiant"
+        else:
+            rank_name, rank_val = rank.split(' ')
+            image = rank_name.lower() + "-" + rank_val.lower()
+
 
         return {
             'state': "Peak Rank: " + rank,
