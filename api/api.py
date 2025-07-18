@@ -12,7 +12,7 @@ tag = os.getenv("TAG")
 #
 
 def get_account_info(name, tag):
-    url = f"https://api.henrikdev.xyz/valorant/v1/account/{name}/{tag}"
+    url = f"https://api.henrikdev.xyz/valorant/v1/account/{username}/{tag}"
     headers = {
         'Authorization': API_KEY
     }
@@ -20,7 +20,7 @@ def get_account_info(name, tag):
     return response.json()
 
 def get_account_rank(name, tag):
-    url = f"https://api.henrikdev.xyz/valorant/v1/mmr-history/eu/{name}/{tag}"
+    url = f"https://api.henrikdev.xyz/valorant/v1/mmr-history/eu/{username}/{tag}"
     headers = {
         'Authorization': API_KEY
     }
@@ -64,6 +64,3 @@ def image():
     rank = rank.get("images")
     image = rank.get("small")
     return image
-
-
-main()
