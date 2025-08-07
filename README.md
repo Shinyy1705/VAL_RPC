@@ -3,7 +3,7 @@
 VAL_RPC is a Python-based Discord Rich Presence tool for [Valorant](https://playvalorant.com).  
 It shows your **peak rank** and activity (e.g., coaching or playing) as your Discord status when Valorant is running.
 
-![Discord RPC Example](https://i.imgur.com/3hUzrAi.png) <!-- Optional placeholder image -->
+![Discord RPC Example](https://imgur.com/3keLZas) <!-- Optional placeholder image -->
 
 ---
 
@@ -23,7 +23,7 @@ It shows your **peak rank** and activity (e.g., coaching or playing) as your Dis
 ### 1. Clone the repo
 
 ```bash
-git clone https://github.com/yourname/VAL_RPC.git
+git clone https://github.com/Shinyy1705/VAL_RPC.git
 cd VAL_RPC
 ```
 
@@ -33,7 +33,7 @@ cd VAL_RPC
 python -m venv venv
 # Activate:
 # On Windows:
-.env\Scriptsctivate
+.env\Scripts\activate
 # On macOS/Linux:
 source venv/bin/activate
 ```
@@ -50,17 +50,16 @@ pip install -r requirements.txt
 
 1. Go to the [Discord Developer Portal](https://discord.com/developers/applications)
 2. Create a new application and note your **Client ID**
-3. Add Rich Presence assets (e.g., `valorant-logo`, rank icons like `gold-3.png`, etc.)
+3. Add Rich Presence assets (e.g., `valorant-logo`, rank icons like `gold-3.png`, etc.) into your Discord Bot
 4. Create a `.env` file in the root folder:
 
 ```env
 API_KEY=your_henrikdev_api_key
 VALUSER=your_username
 TAG=your_tag
+CLIENTID=Discord Bot ID
+BUTTONLINK=https://discord.gg/example  # Must start with https://
 ```
-
-5. Open `main.py` and set your `CLIENT_ID` with your Discord app ID.
-
 ---
 
 ## ▶️ Running the App
@@ -88,14 +87,14 @@ VAL_RPC/
 
 ---
 
-## 📸 Example Presence
+## Example Presence
 
 > Shows your peak rank and coaching status
 
 - Large icon: Valorant logo
 - Small icon: Your peak rank
 - Button: "Join Discord"
-
+![Discord RPC Example2](https://imgur.com/ggOJaNk)
 ---
 
 ## 📜 License
@@ -104,8 +103,7 @@ MIT License. Feel free to fork or modify.
 
 ---
 
-## 🙋 Author
+## 🙋 Authors
 
-**marce**  
-Discord: `marce`  
-[Discord Server](https://discord.gg/Bp5cFGW8wg)
+**Marcel and Tim**  
+Discord: `ShinyyVAL` and `snedx_valo`
