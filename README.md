@@ -94,6 +94,8 @@ VAL_RPC/
 - Large icon: Valorant logo
 - Small icon: Your peak rank
 - Button: "Join Discord"
+
+
 ![Discord RPC Example2](https://i.imgur.com/ggOJaNk.png)
 ---
 
