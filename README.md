@@ -3,7 +3,7 @@
 VAL_RPC is a Python-based Discord Rich Presence tool for [Valorant](https://playvalorant.com).  
 It shows your **peak rank** and activity (e.g., coaching or playing) as your Discord status when Valorant is running.
 
-![Discord RPC Example](https://imgur.com/3keLZas) <!-- Optional placeholder image -->
+![Discord RPC Example](https://i.imgur.com/3keLZas.png) <!-- Optional placeholder image -->
 
 ---
 
@@ -94,7 +94,7 @@ VAL_RPC/
 - Large icon: Valorant logo
 - Small icon: Your peak rank
 - Button: "Join Discord"
-![Discord RPC Example2](https://imgur.com/ggOJaNk)
+![Discord RPC Example2](https://i.imgur.com/ggOJaNk.png)
 ---
 
 ## 📜 License
