@@ -1,10 +1,11 @@
+import os
 import time
 import psutil
 from pypresence import Presence
 import api.api as api  # Your custom module to get rank info
 
 # Replace with your actual Discord application client ID
-CLIENT_ID = '1395545885349515274'
+CLIENT_ID = os.getenv("CLIENTID")  # Replace with your actual client ID
 
 # Connect to Discord Rich Presence
 RPC = Presence(client_id=CLIENT_ID)
@@ -15,7 +16,7 @@ def is_valorant_running():
     for proc in psutil.process_iter(['name']):
         try:
             #edit valorant to discord for testing purposes
-            if proc.info['name'] and "valorant" in proc.info['name'].lower():
+            if proc.info['name'] and "discord" in proc.info['name'].lower():
                 return True
         except (psutil.NoSuchProcess, psutil.AccessDenied, psutil.ZombieProcess):
             continue
@@ -51,7 +52,7 @@ def get_presence_data():
             'buttons': [
                 {
                     "label": "Join Discord",
-                    "url": "https://discord.gg/Bp5cFGW8wg"  # Must start with https://
+                    "url": os.getenv("BUTTONLINK")  # Must start with https://
                 }
             ]
         }

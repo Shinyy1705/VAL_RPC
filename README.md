@@ -1,57 +1,111 @@
-> A Discord Rich Presence Client in Python? Looks like you've come to the right place.
+# VAL_RPC
 
-[![GitHub stars](https://img.shields.io/github/stars/qwertyquerty/pypresence.svg?style=for-the-badge&label=Stars)](https://github.com/qwertyquerty/pypresence) [![license](https://img.shields.io/github/license/qwertyquerty/pypresence.svg?style=for-the-badge)](https://github.com/qwertyquerty/pypresence/blob/master/LICENSE) ![GitHub last commit](https://img.shields.io/github/last-commit/qwertyquerty/pypresence.svg?style=for-the-badge) ![GitHub top language](https://img.shields.io/github/languages/top/qwertyquerty/pypresence.svg?style=for-the-badge) ![PyPI](https://img.shields.io/pypi/v/pypresence.svg?style=for-the-badge)
+VAL_RPC is a Python-based Discord Rich Presence tool for [Valorant](https://playvalorant.com).  
+It shows your **peak rank** and activity (e.g., coaching or playing) as your Discord status when Valorant is running.
 
-## NOTE: Only Python versions 3.9 and above are supported.
+![Discord RPC Example](https://i.imgur.com/3hUzrAi.png) <!-- Optional placeholder image -->
 
-### [Documentation](https://qwertyquerty.github.io/pypresence/html/index.html), [Discord Server](https://discord.gg/JF3kg77), [Patreon](https://www.patreon.com/qwertyquerty)
+---
 
-----------
+## Features
 
-**Use this badge in your project's Readme to show you're using pypresence! The markdown code is below.**
+- Auto-detects if Valorant is running
+- Displays peak rank as small image icon
+- Shows status like "Coaching Valorant" (which you can customize)
+- Integrates with Discord using [pypresence](https://pypi.org/project/pypresence/)
+- Fetches player data using the [HenrikDev Valorant API](https://dash.valorant-api.com/)
+- Includes a join Discord button in your presence
 
-[![pypresence](https://img.shields.io/badge/using-pypresence-00bb88.svg?style=for-the-badge&logo=discord&logoWidth=20)](https://github.com/qwertyquerty/pypresence)
+---
 
-```markdown
-[![pypresence](https://img.shields.io/badge/using-pypresence-00bb88.svg?style=for-the-badge&logo=discord&logoWidth=20)](https://github.com/qwertyquerty/pypresence)
+## Installation
+
+### 1. Clone the repo
+
+```bash
+git clone https://github.com/yourname/VAL_RPC.git
+cd VAL_RPC
 ```
 
+### 2. Create and activate a virtual environment
 
-----------
+```bash
+python -m venv venv
+# Activate:
+# On Windows:
+.env\Scriptsctivate
+# On macOS/Linux:
+source venv/bin/activate
+```
 
-# Installation
+### 3. Install dependencies
 
-Install pypresence with **`pip`**
+```bash
+pip install -r requirements.txt
+```
 
-For the latest development version:
+---
 
-### `pip install https://github.com/qwertyquerty/pypresence/archive/master.zip`
+## Setup
 
-For the latest stable version:
+1. Go to the [Discord Developer Portal](https://discord.com/developers/applications)
+2. Create a new application and note your **Client ID**
+3. Add Rich Presence assets (e.g., `valorant-logo`, rank icons like `gold-3.png`, etc.)
+4. Create a `.env` file in the root folder:
 
-### `pip install pypresence`
+```env
+API_KEY=your_henrikdev_api_key
+VALUSER=your_username
+TAG=your_tag
+```
 
-----------
+5. Open `main.py` and set your `CLIENT_ID` with your Discord app ID.
 
+---
 
-# Documentation
+## ▶️ Running the App
 
-> [!Note]
-> You need an **authorized app** to do anything besides rich presence!
+Once everything is configured:
 
-####  [pypresence Documentation](https://qwertyquerty.github.io/pypresence/html/index.html)
-####  [Discord Rich Presence Documentation](https://discord.com/developers/docs/rich-presence/how-to)
-####  [Discord RPC Documentation](https://discord.com/developers/docs/topics/rpc)
-####  [pyresence Discord Support Server](https://discord.gg/JF3kg77)
-####  [Discord API Support Server](https://discord.gg/discord-api)
+```bash
+python main.py
+```
 
-----------
+VAL_RPC will automatically update your Discord status while Valorant is running.
 
-# Examples
+---
 
-Examples can be found in the [examples](https://github.com/qwertyquerty/pypresence/tree/master/examples) directory, and you can contribute your own examples if you wish, just read [examples.md](https://github.com/qwertyquerty/pypresence/blob/master/examples/examples.md)!
+## 🛠 File Structure
 
-----------
-Written by: [qwertyquerty](https://github.com/qwertyquerty)
+```
+VAL_RPC/
+├── api/
+│   └── api.py         # Rank fetch logic
+├── main.py            # Main loop + Rich Presence logic
+├── requirements.txt
+└── .env               # Your secrets (not committed)
+```
 
-Notable Contributors: [GiovanniMCMXCIX](https://github.com/GiovanniMCMXCIX), [GhostofGoes](https://github.com/GhostofGoes)
+---
+
+## 📸 Example Presence
+
+> Shows your peak rank and coaching status
+
+- Large icon: Valorant logo
+- Small icon: Your peak rank
+- Button: "Join Discord"
+
+---
+
+## 📜 License
+
+MIT License. Feel free to fork or modify.
+
+---
+
+## 🙋 Author
+
+**marce**  
+Discord: `marce`  
+[Discord Server](https://discord.gg/Bp5cFGW8wg)
