@@ -93,6 +93,8 @@ VAL_RPC/
 
 - Large icon: Valorant logo
 - Small icon: Your peak rank
+- Text: Peak Rank
+- Text2: Activity (can be customized in Main)
 - Button: "Join Discord"
 
 
